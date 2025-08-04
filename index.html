@@ -160,7 +160,7 @@
       ]
     };
 
-    const completados = new Set();
+    const completados = new Set(JSON.parse(localStorage.getItem("cursosCompletados") || "[]"));
     const contenedor = document.getElementById("contenedor");
 
     function renderCursos() {
@@ -207,6 +207,10 @@
               completados.delete(materia.nombre);
             }
             renderCursos();
+
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("cursosCompletados", JSON.stringify(Array.from(completados)));
+    });
           });
 
           divCurso.appendChild(label);
