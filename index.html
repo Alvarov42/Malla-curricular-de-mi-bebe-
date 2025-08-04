@@ -72,93 +72,95 @@
   <div id="contenedor"></div>
 
   <script>
-    const cursos = { "PRIMER CICLO": [
-    { "nombre": "HISTORIA DE LAS IDEAS POLÍTICAS" },
-    { "nombre": "HISTORIA COMPARADA" },
-    { "nombre": "ESTRATEGIAS DE APRENDIZAJE" },
-    { "nombre": "ECONOMÍA POLÍTICA" },
-    { "nombre": "ÉTICA CIUDADANA Y PROFESIONAL" },
-    { "nombre": "LENGUAJE I" },
-    { "nombre": "INGLÉS I" },
-    { "nombre": "ACTIVIDADES I" }
-  ],
-  "SEGUNDO CICLO": [
-    { "nombre": "HISTORIA DE LAS IDEAS POLÍTICAS II", "prereq": ["HISTORIA DE LAS IDEAS POLÍTICAS"] },
-    { "nombre": "HISTORIA GENERAL DEL DERECHO", "prereq": ["HISTORIA COMPARADA"] },
-    { "nombre": "CIENCIA POLÍTICA", "prereq": ["ESTRATEGIAS DE APRENDIZAJE"] },
-    { "nombre": "FUNDAMENTOS DE ECONOMÍA", "prereq": ["ECONOMÍA POLÍTICA"] },
-    { "nombre": "TEORÍA DEL DERECHO I", "prereq": ["ÉTICA CIUDADANA Y PROFESIONAL"] },
-    { "nombre": "LENGUAJE II", "prereq": ["LENGUAJE I"] },
-    { "nombre": "INGLES II", "prereq": ["INGLÉS I"] },
-    { "nombre": "ACTIVIDADES II", "prereq": ["ACTIVIDADES I"] }
-  ],
-  "TERCER CICLO": [
-    { "nombre": "PRINCIPIOS Y PERSONAS", "prereq": ["HISTORIA DE LAS IDEAS POLÍTICAS II"] },
-    { "nombre": "ACTO JURÍDICO", "prereq": ["HISTORIA GENERAL DEL DERECHO"] },
-    { "nombre": "TEORÍA CONSTITUCIONAL", "prereq": ["CIENCIA POLÍTICA"] },
-    { "nombre": "METODOLOGÍA DE LA INVESTIGACIÓN", "prereq": ["FUNDAMENTOS DE ECONOMÍA"] },
-    { "nombre": "TEORÍA DEL DERECHO II", "prereq": ["TEORÍA DEL DERECHO I"] },
-    { "nombre": "INSTITUCIONES PROCESALES", "prereq": ["LENGUAJE II"] }
-  ],
-  "CUARTO CICLO": [
-    { "nombre": "DERECHO LABORAL INDIVIDUAL", "prereq": ["PRINCIPIOS Y PERSONAS"] },
-    { "nombre": "DERECHO REALES", "prereq": ["ACTO JURÍDICO"] },
-    { "nombre": "DERECHOS FUNDAMENTALES", "prereq": ["TEORÍA CONSTITUCIONAL"] },
-    { "nombre": "BASES DEL DERECHO PENAL", "prereq": ["METODOLOGÍA DE LA INVESTIGACIÓN"] },
-    { "nombre": "DERECHO INTERNACIONAL PUBLICO", "prereq": ["TEORÍA DEL DERECHO II"] },
-    { "nombre": "PROCESOS CIVILES DE COGNICÍON", "prereq": ["INSTITUCIONES PROCESALES"] }
-  ],
-  "QUINTO CICLO": [
-    { "nombre": "DERECHO LABORAL COLECTIVO", "prereq": ["DERECHO LABORAL INDIVIDUAL"] },
-    { "nombre": "DERECHO DE LAS OBLIGACIONES", "prereq": ["DERECHO REALES"] },
-    { "nombre": "DERECHO PROCESAL CONSTITUCIONAL", "prereq": ["DERECHOS FUNDAMENTALES"] },
-    { "nombre": "TEORIA DE LA IMPUTACIÓN PENAL", "prereq": ["BASES DEL DERECHO PENAL"] },
-    { "nombre": "DERECHOS HUMANOS", "prereq": ["DERECHO INTERNACIONAL PUBLICO"] },
-    { "nombre": "TUTELA EJECUTIVA Y CAUTELAR", "prereq": ["PROCESOS CIVILES DE COGNICÍON"] }
-  ],
-  "SEXTO CICLO": [
-    { "nombre": "DERECHO PROCESAL LABORAL", "prereq": ["DERECHO LABORAL COLECTIVO"] },
-    { "nombre": "TEORIA GENERAL DE LOS CONTRATOS", "prereq": ["DERECHO DE LAS OBLIGACIONES"] },
-    { "nombre": "DERECHO TRIBUTARIO GENERAL", "prereq": ["DERECHO PROCESAL CONSTITUCIONAL"] },
-    { "nombre": "PENAL ESPECIAL", "prereq": ["TEORIA DE LA IMPUTACIÓN PENAL"] },
-    { "nombre": "DERECHO FINANCIERO", "prereq": ["DERECHOS HUMANOS"] },
-    { "nombre": "DERECHO ADMINISTRATIVO", "prereq": ["TUTELA EJECUTIVA Y CAUTELAR"] }
-  ],
-  "SETIMO CICLO": [
-    { "nombre": "ARBITRAJE", "prereq": ["DERECHO PROCESAL LABORAL"] },
-    { "nombre": "CONTRATOS ESPECIALES", "prereq": ["TEORIA GENERAL DE LOS CONTRATOS"] },
-    { "nombre": "IMPOSICIÓN A LA RENTA", "prereq": ["DERECHO TRIBUTARIO GENERAL"] },
-    { "nombre": "INVESTIGACIÓN PENAL PREPARATORIA", "prereq": ["PENAL ESPECIAL"] },
-    { "nombre": "DERECHO DE LA EMPRESA", "prereq": ["DERECHO FINANCIERO"] },
-    { "nombre": "DERECHO PROCESAL ADMINISTRATIVO", "prereq": ["DERECHO ADMINISTRATIVO"] }
-  ],
-  "OCTAVO CICLO": [
-    { "nombre": "RESPONSABILIDAD CIVIL", "prereq": ["ARBITRAJE"] },
-    { "nombre": "DERECHO DE FAMILIA Y SUCESIONES", "prereq": ["CONTRATOS ESPECIALES"] },
-    { "nombre": "IMPOSICIÓN AL CONSUMO", "prereq": ["IMPOSICIÓN A LA RENTA"] },
-    { "nombre": "ETAPA INTERMEDIA Y JUZGAMIENTO PENAL", "prereq": ["INVESTIGACIÓN PENAL PREPARATORIA"] },
-    { "nombre": "DERECHO SOCIETARIO", "prereq": ["DERECHO DE LA EMPRESA"] },
-    { "nombre": "CONTRATACIÓN CON EL ESTADO", "prereq": ["DERECHO PROCESAL ADMINISTRATIVO"] }
-  ],
-  "NOVENO CICLO": [
-    { "nombre": "DERECHO DE PROPIEDAD INTELECTUAL", "prereq": ["RESPONSABILIDAD CIVIL"] },
-    { "nombre": "DERECHO NOTARIAL Y REGISTRAL", "prereq": ["DERECHO DE FAMILIA Y SUCESIONES"] },
-    { "nombre": "ANALISIS ECONÓMICO DEL DERECHO", "prereq": ["IMPOSICIÓN AL CONSUMO"] },
-    { "nombre": "LITIGACION ORAL", "prereq": ["ETAPA INTERMEDIA Y JUZGAMIENTO PENAL"] },
-    { "nombre": "DERECHO CAMBIARIO", "prereq": ["DERECHO SOCIETARIO"] },
-    { "nombre": "DERECHO DEL CONSUMO", "prereq": ["CONTRATACIÓN CON EL ESTADO"] }
-  ],
-  "DECIMO CICLO": [
-    { "nombre": "DERECHO Y DESARROLLO SOSTENIBLE", "prereq": ["DERECHO DE PROPIEDAD INTELECTUAL"] },
-    { "nombre": "DERECHO DE LA BANCA", "prereq": ["DERECHO NOTARIAL Y REGISTRAL"] },
-    { "nombre": "RÉGIMEN PYME", "prereq": ["ANALISIS ECONÓMICO DEL DERECHO"] },
-    { "nombre": "NEGOCIACIÓN", "prereq": ["LITIGACION ORAL"] },
-    { "nombre": "DERECHO CORPORATIVO", "prereq": ["DERECHO CAMBIARIO"] },
-    { "nombre": "DERECHO DE LA COMPETENCIA", "prereq": ["DERECHO DEL CONSUMO"] }
-  ] };
+    const cursos = {
+      "PRIMER CICLO": [
+        { "nombre": "HISTORIA DE LAS IDEAS POLÍTICAS" },
+        { "nombre": "HISTORIA COMPARADA" },
+        { "nombre": "ESTRATEGIAS DE APRENDIZAJE" },
+        { "nombre": "ECONOMÍA POLÍTICA" },
+        { "nombre": "ÉTICA CIUDADANA Y PROFESIONAL" },
+        { "nombre": "LENGUAJE I" },
+        { "nombre": "INGLÉS I" },
+        { "nombre": "ACTIVIDADES I" }
+      ],
+      "SEGUNDO CICLO": [
+        { "nombre": "HISTORIA DE LAS IDEAS POLÍTICAS II", "prereq": ["HISTORIA DE LAS IDEAS POLÍTICAS"] },
+        { "nombre": "HISTORIA GENERAL DEL DERECHO", "prereq": ["HISTORIA COMPARADA"] },
+        { "nombre": "CIENCIA POLÍTICA", "prereq": ["ESTRATEGIAS DE APRENDIZAJE"] },
+        { "nombre": "FUNDAMENTOS DE ECONOMÍA", "prereq": ["ECONOMÍA POLÍTICA"] },
+        { "nombre": "TEORÍA DEL DERECHO I", "prereq": ["ÉTICA CIUDADANA Y PROFESIONAL"] },
+        { "nombre": "LENGUAJE II", "prereq": ["LENGUAJE I"] },
+        { "nombre": "INGLES II", "prereq": ["INGLÉS I"] },
+        { "nombre": "ACTIVIDADES II", "prereq": ["ACTIVIDADES I"] }
+      ],
+      "TERCER CICLO": [
+        { "nombre": "PRINCIPIOS Y PERSONAS", "prereq": ["HISTORIA DE LAS IDEAS POLÍTICAS II"] },
+        { "nombre": "ACTO JURÍDICO", "prereq": ["HISTORIA GENERAL DEL DERECHO"] },
+        { "nombre": "TEORÍA CONSTITUCIONAL", "prereq": ["CIENCIA POLÍTICA"] },
+        { "nombre": "METODOLOGÍA DE LA INVESTIGACIÓN", "prereq": ["FUNDAMENTOS DE ECONOMÍA"] },
+        { "nombre": "TEORÍA DEL DERECHO II", "prereq": ["TEORÍA DEL DERECHO I"] },
+        { "nombre": "INSTITUCIONES PROCESALES", "prereq": ["LENGUAJE II"] }
+      ],
+      "CUARTO CICLO": [
+        { "nombre": "DERECHO LABORAL INDIVIDUAL", "prereq": ["PRINCIPIOS Y PERSONAS"] },
+        { "nombre": "DERECHO REALES", "prereq": ["ACTO JURÍDICO"] },
+        { "nombre": "DERECHOS FUNDAMENTALES", "prereq": ["TEORÍA CONSTITUCIONAL"] },
+        { "nombre": "BASES DEL DERECHO PENAL", "prereq": ["METODOLOGÍA DE LA INVESTIGACIÓN"] },
+        { "nombre": "DERECHO INTERNACIONAL PUBLICO", "prereq": ["TEORÍA DEL DERECHO II"] },
+        { "nombre": "PROCESOS CIVILES DE COGNICÍON", "prereq": ["INSTITUCIONES PROCESALES"] }
+      ],
+      "QUINTO CICLO": [
+        { "nombre": "DERECHO LABORAL COLECTIVO", "prereq": ["DERECHO LABORAL INDIVIDUAL"] },
+        { "nombre": "DERECHO DE LAS OBLIGACIONES", "prereq": ["DERECHO REALES"] },
+        { "nombre": "DERECHO PROCESAL CONSTITUCIONAL", "prereq": ["DERECHOS FUNDAMENTALES"] },
+        { "nombre": "TEORIA DE LA IMPUTACIÓN PENAL", "prereq": ["BASES DEL DERECHO PENAL"] },
+        { "nombre": "DERECHOS HUMANOS", "prereq": ["DERECHO INTERNACIONAL PUBLICO"] },
+        { "nombre": "TUTELA EJECUTIVA Y CAUTELAR", "prereq": ["PROCESOS CIVILES DE COGNICÍON"] }
+      ],
+      "SEXTO CICLO": [
+        { "nombre": "DERECHO PROCESAL LABORAL", "prereq": ["DERECHO LABORAL COLECTIVO"] },
+        { "nombre": "TEORIA GENERAL DE LOS CONTRATOS", "prereq": ["DERECHO DE LAS OBLIGACIONES"] },
+        { "nombre": "DERECHO TRIBUTARIO GENERAL", "prereq": ["DERECHO PROCESAL CONSTITUCIONAL"] },
+        { "nombre": "PENAL ESPECIAL", "prereq": ["TEORIA DE LA IMPUTACIÓN PENAL"] },
+        { "nombre": "DERECHO FINANCIERO", "prereq": ["DERECHOS HUMANOS"] },
+        { "nombre": "DERECHO ADMINISTRATIVO", "prereq": ["TUTELA EJECUTIVA Y CAUTELAR"] }
+      ],
+      "SETIMO CICLO": [
+        { "nombre": "ARBITRAJE", "prereq": ["DERECHO PROCESAL LABORAL"] },
+        { "nombre": "CONTRATOS ESPECIALES", "prereq": ["TEORIA GENERAL DE LOS CONTRATOS"] },
+        { "nombre": "IMPOSICIÓN A LA RENTA", "prereq": ["DERECHO TRIBUTARIO GENERAL"] },
+        { "nombre": "INVESTIGACIÓN PENAL PREPARATORIA", "prereq": ["PENAL ESPECIAL"] },
+        { "nombre": "DERECHO DE LA EMPRESA", "prereq": ["DERECHO FINANCIERO"] },
+        { "nombre": "DERECHO PROCESAL ADMINISTRATIVO", "prereq": ["DERECHO ADMINISTRATIVO"] }
+      ],
+      "OCTAVO CICLO": [
+        { "nombre": "RESPONSABILIDAD CIVIL", "prereq": ["ARBITRAJE"] },
+        { "nombre": "DERECHO DE FAMILIA Y SUCESIONES", "prereq": ["CONTRATOS ESPECIALES"] },
+        { "nombre": "IMPOSICIÓN AL CONSUMO", "prereq": ["IMPOSICIÓN A LA RENTA"] },
+        { "nombre": "ETAPA INTERMEDIA Y JUZGAMIENTO PENAL", "prereq": ["INVESTIGACIÓN PENAL PREPARATORIA"] },
+        { "nombre": "DERECHO SOCIETARIO", "prereq": ["DERECHO DE LA EMPRESA"] },
+        { "nombre": "CONTRATACIÓN CON EL ESTADO", "prereq": ["DERECHO PROCESAL ADMINISTRATIVO"] }
+      ],
+      "NOVENO CICLO": [
+        { "nombre": "DERECHO DE PROPIEDAD INTELECTUAL", "prereq": ["RESPONSABILIDAD CIVIL"] },
+        { "nombre": "DERECHO NOTARIAL Y REGISTRAL", "prereq": ["DERECHO DE FAMILIA Y SUCESIONES"] },
+        { "nombre": "ANALISIS ECONÓMICO DEL DERECHO", "prereq": ["IMPOSICIÓN AL CONSUMO"] },
+        { "nombre": "LITIGACION ORAL", "prereq": ["ETAPA INTERMEDIA Y JUZGAMIENTO PENAL"] },
+        { "nombre": "DERECHO CAMBIARIO", "prereq": ["DERECHO SOCIETARIO"] },
+        { "nombre": "DERECHO DEL CONSUMO", "prereq": ["CONTRATACIÓN CON EL ESTADO"] },
+        { "nombre": "SEMINARIO DE TESIS", "prereq": ["RESPONSABILIDAD CIVIL"] }
+      ],
+      "DECIMO CICLO": [
+        { "nombre": "DERECHO Y DESARROLLO SOSTENIBLE", "prereq": ["DERECHO DE PROPIEDAD INTELECTUAL"] },
+        { "nombre": "DERECHO DE LA BANCA", "prereq": ["DERECHO NOTARIAL Y REGISTRAL"] },
+        { "nombre": "RÉGIMEN PYME", "prereq": ["ANALISIS ECONÓMICO DEL DERECHO"] },
+        { "nombre": "NEGOCIACIÓN", "prereq": ["LITIGACION ORAL"] },
+        { "nombre": "DERECHO CORPORATIVO", "prereq": ["DERECHO CAMBIARIO"] },
+        { "nombre": "DERECHO DE LA COMPETENCIA", "prereq": ["DERECHO DEL CONSUMO"] }
+      ]
+    };
 
     const completados = new Set();
-
     const contenedor = document.getElementById("contenedor");
 
     function renderCursos() {
